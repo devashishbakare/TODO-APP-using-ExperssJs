@@ -1,0 +1,209 @@
+body{
+    box-sizing: border-box;
+    margin : 0; 
+    padding: 0;    
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    height : auto;
+    width : 40%;
+    border : 1px solid black;
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 5px black;
+    margin-top : 40px
+}
+
+.basic-structure{
+    height : 80px;
+    width : 90%;
+    border-bottom : 1px solid lightslategray;  
+    /* border : 1px solid black; */
+    margin-top : 2px
+}
+
+#heading, #description{
+    border-bottom : 1px solid lightslategray;
+}
+
+#heading{
+    width : 100%;
+    margin-top: 0;
+    background-color : #6CB4EE;
+}
+
+#heading-text{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-weight: bolder;
+    color : darkslategray;
+}
+
+#description, h3{
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    color : darkslategray;
+    display : inline-block;
+    margin : 0;
+    margin-left : 8px;
+    margin-top : 5px;
+}
+#description{
+    margin-left : -2px;
+}
+
+#description input{
+    border : 0;
+    outline: 0;
+}
+#textBox{
+    height : 35px;
+    width: 80%;
+    margin-bottom : 10px;
+    margin-left : 5px;
+    font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color : darkgrey;
+    opacity: 0.7;
+    border: none;
+}
+
+#category-date{
+    display : inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+}
+
+#category, #date{
+    height: inherit;
+    width: 45%;
+    display : inline-block;
+    /* border : 2px solid black; */
+    border-bottom : 1px solid lightslategray;
+}
+
+#select{
+    height : 50%;
+    width: 100%;
+    border : 0;
+    outline: 0;
+    font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color : darkgrey;
+}
+
+.options{
+    font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color : darkgrey;
+    border : none;
+}
+
+#dates{
+    height : 40px;
+    width : 90%;
+    color : darkgrey;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border : 0;
+    outline : 0;
+    margin-left : 5px;
+
+}
+
+#buttons{
+    display : inline-block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;  
+}
+
+#add-task-button, #delete-task-button{
+    height: 60%;
+    width: 30%;
+    display : inline-block;
+    /* border : 2px solid black; */
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: 5px 5px 5px black;
+}
+#add-task-button{
+    background-color : gray;
+    margin-right : 5px;    
+}
+#add-task-button i{
+    margin-top : 6px;
+}
+
+#delete-task-button i{
+    margin-top: 6px;
+}
+
+#delete-task-button{
+    background-color: orangered;
+    margin-left : 5px;
+}
+#add, #delete{
+    height : 100%;
+    width: 70%;
+    background-color : gray;
+    font-size: 1.1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    border : 0;
+}
+
+#delete{
+    background-color: orangered;
+}
+
+#tasks{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+#data{
+    display: inline-block;
+    height : inherit;
+    width : 70%;
+    /* border: 1px solid black; */
+}
+
+#list-id, #list-desc{
+    display : inline-block;
+    margin: 0;
+    margin-top: 10px;
+    margin-left : 10px;
+}
+#list-date{
+    margin-left : 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+}
+
+#list-desc{
+    font-family :'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#labels{
+    display: inline-block;
+    height : inherit;
+    width : 28%;
+    /* border: 1px solid black; */
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#list-category{
+    height: 35px;
+    width :60%;
+    border : 1px solid black;
+}
