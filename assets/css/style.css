@@ -206,4 +206,12 @@ body{
     height: 35px;
     width :60%;
     border : 1px solid black;
+    text-align : center;
+}
+
+#list-category p{
+    font-size: large;
+    text-align: center;
+    color : blue;
+    margin-top: 7px;
 }

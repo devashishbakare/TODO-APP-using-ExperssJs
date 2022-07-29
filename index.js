@@ -9,10 +9,13 @@ const app = express();
 //set ejs as view engine and set the path
 app.set("view engine", "ejs");
 app.set("views", "views");
+
 app.use("/assets", express.static(__dirname + "/assets"));
+
+app.use(express.urlencoded());
+
 app.use("/", require("./routs/home"));
-// app.use(express.urlencoded());
-//middlewares
+
 
 app.listen(port, function(err){
     if (err) {

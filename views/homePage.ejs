@@ -7,61 +7,64 @@
 </head>
 <body>
     
-    
     <div id = "container">
         
         <div id = "heading" class = "basic-structure">
             <h1 id = "heading-text">TODO App</h1>
         </div>
 
-        <div id = "description" class = "basic-structure">
-                <h3>descpirtion</h3>
-                <input type="text" id = "textBox" placeholder = "what do you need to do?" required>
-        </div>
+        <form action="/add-task" method = "POST">
+            <div id = "description" class = "basic-structure">
+                    <h3>description</h3>
+                    <input type="text" id = "textBox" name = "description" placeholder = "what do you need to do?" required>
+            </div>
 
-        <div id = "category-date" class = "basic-structure">
-                <div id = "category">
-                    <h3>CATEGORY</h3>
-                   <select name="select" id="select">
-                    <option value="1" class = "options">Choose a category</option>
-                    <option value="2" class = "options">Personal</option>
-                    <option value="3" class = "options">Work</option>
-                    <option value="4" class = "options">College</option>
-                    <option value="5" class = "options">Other</option>
-                   </select>
+            <div id = "category-date" class = "basic-structure">
+                    <div id = "category">
+                        <h3>CATEGORY</h3>
+                    <select name="category" id="select">
+                        <option value="1" class = "options">Choose a category</option>
+                        <option value="Personal" class = "options">Personal</option>
+                        <option value="Work" class = "options">Work</option>
+                        <option value="College" class = "options">College</option>
+                        <option value="Other" class = "options">Other</option>
+                    </select>
+                    </div>
+
+                    <div id = "date">
+                        <h3>DUE DATE</h3>
+                        <input type="date" id="dates" name = "date">
+                    </div>
+            </div>
+
+            <div id = "buttons" class = "basic-structure">
+                <div id = "add-task-button">
+                    <i class = "fas fa-plus fa-2x"></i>
+                    <button id = "add">ADD TASK</button>
                 </div>
-
-                <div id = "date">
-                    <h3>DUE DATE</h3>
-                    <input type="date" id="dates">
+                <div id = "delete-task-button">
+                    <i class = "fas fa-trash fa-2x"></i>
+                    <button id = "delete">DELETE TASK</button>
                 </div>
-        </div>
-
-        <div id = "buttons" class = "basic-structure">
-            <div id = "add-task-button">
-                <i class = "fas fa-plus fa-2x"></i>
-                <button id = "add">ADD TASK</button>
             </div>
-            <div id = "delete-task-button">
-                <i class = "fas fa-trash fa-2x"></i>
-                <button id = "delete">DELETE TASK</button>
-            </div>
-        </div>
-
-        <div id = "tasks" class = "basic-structure">
-           
-           <div id = "data">
-                <input type="checkbox" name="task1" id="list-id">
-                <p id = "list-desc">description</h3>
-                <br>
-                <p id = "list-date">date</p>
-           </div>
-            <div id = "labels">
-                <div id = "list-category"></div>
-            </div>
-            
-        </div>
-
+        </form>
+       <% for(let task of todoDb){%>
+            <div id = "tasks" class = "basic-structure">           
+                <div id = "data">
+                     <input type="checkbox" name="task1" id="list-id">
+                     <p id = "list-desc"><%=task.description%></h3>
+                     <br>
+                     <p id = "list-date"><%=task.date%></p>
+                </div>
+                 <div id = "labels">
+                     <div id = "list-category">
+                        <p><%=task.category%></p>
+                     </div>
+                 </div>            
+             </div>
+     
+        <%}%>
+        
     </div>
 
 <script src = "../assets/js/home.js"></script>
