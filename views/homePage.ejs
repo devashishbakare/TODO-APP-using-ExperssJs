@@ -2,23 +2,28 @@
 <html lang="en">
 <head></head>
     <title>Todo-List</title>
+    <!-- CDN of font awesome for Icone and Linked Css for style -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     
+    <!-- Outline for the app -->
     <div id = "container">
         
+        <!-- Heading to page -->
         <div id = "heading" class = "basic-structure">
             <h1 id = "heading-text">TODO App</h1>
         </div>
 
+        <!-- Form my collecting data -->
         <form action="/add-task" method = "POST">
+            <!-- Description for task -->
             <div id = "description" class = "basic-structure">
                     <h3>description</h3>
                     <input type="text" id = "textBox" name = "description" placeholder = "what do you need to do?" required>
             </div>
-
+            <!-- Category for task -->
             <div id = "category-date" class = "basic-structure">
                     <div id = "category">
                         <h3>CATEGORY</h3>
@@ -30,43 +35,51 @@
                         <option value="Other" class = "options">Other</option>
                     </select>
                     </div>
-
-                    <div id = "date">
-                        <h3>DUE DATE</h3>
-                        <input type="date" id="dates" name = "date">
-                    </div>
+                <!-- Date for task -->
+                <div id = "date">
+                    <h3>DUE DATE</h3>
+                    <input type="date" id="dates" name = "date">
+                </div>
             </div>
 
+            <!-- Add task button -->
             <div id = "buttons" class = "basic-structure">
-                <div id = "add-task-button">
+                <div id = "add-task-button" onclick = "addAlert()">
                     <i class = "fas fa-plus fa-2x"></i>
                     <button id = "add">ADD TASK</button>
                 </div>
-                <div id = "delete-task-button">
-                    <i class = "fas fa-trash fa-2x"></i>
-                    <button id = "delete">DELETE TASK</button>
-                </div>
             </div>
         </form>
-       <% for(let task of todoDb){%>
-            <div id = "tasks" class = "basic-structure">           
-                <div id = "data">
-                     <input type="checkbox" name="task1" id="list-id">
-                     <p id = "list-desc"><%=task.description%></h3>
-                     <br>
-                     <p id = "list-date"><%=task.date%></p>
+
+        <!-- Adding Scroll to All tasks -->
+        <div id = "scrollMe">
+            <!-- Iterating over allTask -->
+             <% for(let task of todoDb){%>
+                <!-- Displaying data to homePage -->
+                <div id = "tasks" class = "basic-structure">           
+                    <div id = "data">
+                        <p id = "list-desc"><%=task.description%></h3>
+                        <br>
+                        <p id = "list-date"><%=task.date%></p>
+                    </div>
+                    <div id = "labels">
+                        <div id = "list-category" > 
+                            <p><%=task.category%></p>
+                        </div>
+                    </div>
+                    <!-- Adding Icon to delete the task -->
+                    <div id = "delete-task-icon">
+                         <a href="/delete-task/?id=<%=task._id%>" onclick = "deleteAlert()">
+                        <i class = "fas fa-trash fa-2x"></i>
+                        </a>
+                    </div>
                 </div>
-                 <div id = "labels">
-                     <div id = "list-category">
-                        <p><%=task.category%></p>
-                     </div>
-                 </div>            
-             </div>
-     
-        <%}%>
+        
+            <%}%>
+        </div>         
         
     </div>
-
+<!-- script file -->
 <script src = "../assets/js/home.js"></script>
 </body>
 </html>
